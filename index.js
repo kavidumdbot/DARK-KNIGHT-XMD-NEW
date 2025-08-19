@@ -216,12 +216,6 @@ const ownerNumber = config.OWNER_NUMBER
 const ownerdataa = (await axios.get('https://mv-visper-full-db.pages.dev/Main/main_var.json')).data;
      
          
-
- 
-
-
-
-
   conn.ev.on('creds.update', saveCreds)
   conn.ev.on('messages.upsert', async (mek) => {
     try {
@@ -258,11 +252,6 @@ await conn.sendMessage(mek.key.remoteJid, { react: { key: mek.key, text: randomE
 	    if (mek.key && mek.key.remoteJid === 'status@broadcast') return
 
 
-
-
-
-
-	    
 const m = sms(conn, mek)
 const type = getContentType(mek.message)
 const content = JSON.stringify(mek.message)
@@ -720,6 +709,7 @@ if  ( isGroup &&  !isMe && !isOwner ) return
 
 
 //==================================plugin map================================
+
 const events = require('./command')
 const cmdName = isCmd ? body.slice(1).trim().split(" ")[0].toLowerCase() : false;
 if (isCmd) {
